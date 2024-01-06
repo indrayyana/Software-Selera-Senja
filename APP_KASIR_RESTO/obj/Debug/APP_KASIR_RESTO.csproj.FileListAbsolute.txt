@@ -1,0 +1,11 @@
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\bin\Debug\APP_KASIR_RESTO.exe.config
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\bin\Debug\APP_KASIR_RESTO.exe
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\bin\Debug\APP_KASIR_RESTO.pdb
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.csproj.AssemblyReference.cache
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.FormDataMenu.resources
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.Properties.Resources.resources
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.csproj.GenerateResource.cache
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.csproj.CoreCompileInputs.cache
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.exe
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.pdb
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.FormDataMenuCreate.resources
