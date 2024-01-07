@@ -81,7 +81,7 @@ namespace APP_KASIR_RESTO
                 frm.id_menu_edit = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 frm.txtNama.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 frm.txtKategori.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                frm.txtHarga.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                frm.numHarga.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 frm.comboBoxKetersediaan.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
 
                 if (frm.ShowDialog() == DialogResult.OK)

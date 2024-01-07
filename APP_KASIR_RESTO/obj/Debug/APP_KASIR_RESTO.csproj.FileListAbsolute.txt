@@ -9,3 +9,4 @@ C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KA
 C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.exe
 C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.pdb
 C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.FormDataMenuCreate.resources
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.FormHome.resources

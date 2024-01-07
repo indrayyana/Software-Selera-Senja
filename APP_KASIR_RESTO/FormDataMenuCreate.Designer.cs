@@ -32,12 +32,13 @@
             this.txtNama = new System.Windows.Forms.TextBox();
             this.txtKategori = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtHarga = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.comboBoxKetersediaan = new System.Windows.Forms.ComboBox();
+            this.numHarga = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numHarga)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,13 +73,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Kategori";
             // 
-            // txtHarga
-            // 
-            this.txtHarga.Location = new System.Drawing.Point(121, 67);
-            this.txtHarga.Name = "txtHarga";
-            this.txtHarga.Size = new System.Drawing.Size(271, 20);
-            this.txtHarga.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -99,8 +93,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Lime;
+            this.btnSave.BackColor = System.Drawing.Color.DarkGreen;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSave.Location = new System.Drawing.Point(202, 130);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(92, 34);
@@ -111,8 +107,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.BackColor = System.Drawing.Color.Crimson;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCancel.Location = new System.Drawing.Point(300, 130);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 34);
@@ -132,16 +130,28 @@
             this.comboBoxKetersediaan.Size = new System.Drawing.Size(271, 21);
             this.comboBoxKetersediaan.TabIndex = 10;
             // 
+            // numHarga
+            // 
+            this.numHarga.Location = new System.Drawing.Point(121, 67);
+            this.numHarga.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numHarga.Name = "numHarga";
+            this.numHarga.Size = new System.Drawing.Size(271, 20);
+            this.numHarga.TabIndex = 11;
+            // 
             // FormDataMenuCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 186);
+            this.Controls.Add(this.numHarga);
             this.Controls.Add(this.comboBoxKetersediaan);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtHarga);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtKategori);
             this.Controls.Add(this.label2);
@@ -149,6 +159,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormDataMenuCreate";
             this.Text = "FormDataMenuCreate";
+            ((System.ComponentModel.ISupportInitialize)(this.numHarga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,7 +175,7 @@
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.TextBox txtNama;
         public System.Windows.Forms.TextBox txtKategori;
-        public System.Windows.Forms.TextBox txtHarga;
         public System.Windows.Forms.ComboBox comboBoxKetersediaan;
+        public System.Windows.Forms.NumericUpDown numHarga;
     }
 }

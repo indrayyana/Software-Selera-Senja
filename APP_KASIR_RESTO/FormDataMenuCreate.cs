@@ -25,7 +25,7 @@ namespace APP_KASIR_RESTO
             // Validasi input
             if (string.IsNullOrWhiteSpace(txtNama.Text) ||
                 string.IsNullOrWhiteSpace(txtKategori.Text) ||
-                string.IsNullOrWhiteSpace(txtHarga.Text) ||
+                string.IsNullOrWhiteSpace(numHarga.Text) ||
                 string.IsNullOrWhiteSpace(comboBoxKetersediaan.Text))
             {
                 MessageBox.Show("Semua input harus diisi.", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -56,7 +56,7 @@ namespace APP_KASIR_RESTO
 
                 cmd.Parameters.AddWithValue("pNama", txtNama.Text);
                 cmd.Parameters.AddWithValue("pKategori", txtKategori.Text);
-                cmd.Parameters.AddWithValue("pHarga", txtHarga.Text);
+                cmd.Parameters.AddWithValue("pHarga", numHarga.Text);
                 cmd.Parameters.AddWithValue("pKetersediaan", comboBoxKetersediaan.Text);
 
                 //eksekusi command tersebut

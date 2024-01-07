@@ -16,7 +16,7 @@ namespace APP_KASIR_RESTO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDataMenu());
+            Application.Run(new FormHome());
         }
     }
 }
