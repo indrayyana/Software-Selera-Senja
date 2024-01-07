@@ -58,6 +58,7 @@
     <Compile Include="FormDataMenuCreate.Designer.cs">
       <DependentUpon>FormDataMenuCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Koneksi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDataMenu.resx">

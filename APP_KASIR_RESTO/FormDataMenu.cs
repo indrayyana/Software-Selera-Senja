@@ -21,30 +21,35 @@ namespace APP_KASIR_RESTO
 
         public void LoadDataMenu()
         {
-            string connString = @"data source=DESKTOP-1KQRPTA\SQLEXPRESS01; initial catalog=KASIR_RESTO; integrated security=true";
-            SqlConnection sqlConn = new SqlConnection(connString);
-            sqlConn.Open();
-
-            dataGridView1.Rows.Clear();
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader rd;
-            cmd.CommandText = $"SELECT * FROM menu WHERE nama LIKE '%{textBox1.Text}%' ORDER BY id";
-            cmd.Connection = sqlConn;
-            rd = cmd.ExecuteReader();
-            while (rd.Read())
+            try
             {
-                int newIndex = dataGridView1.Rows.Add();
-                dataGridView1.Rows[newIndex].Cells[0].Value = rd["id"].ToString();
-                dataGridView1.Rows[newIndex].Cells[1].Value = rd["nama"].ToString();
-                dataGridView1.Rows[newIndex].Cells[2].Value = rd["kategori"].ToString();
-                dataGridView1.Rows[newIndex].Cells[3].Value = rd["harga"].ToString();
-                dataGridView1.Rows[newIndex].Cells[4].Value = rd["ketersediaan"].ToString();
-                dataGridView1.Rows[newIndex].Cells[5].Value = "Edit";
-                dataGridView1.Rows[newIndex].Cells[6].Value = "Delete";
+                Koneksi.buka();
+                dataGridView1.Rows.Clear();
+                SqlCommand cmd = new SqlCommand();
+                SqlDataReader rd;
+                cmd.CommandText = $"SELECT * FROM menu WHERE nama LIKE '%{textBox1.Text}%' ORDER BY id";
+                cmd.Connection = Koneksi.sqlConn;
+                rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    int newIndex = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[newIndex].Cells[0].Value = rd["id"].ToString();
+                    dataGridView1.Rows[newIndex].Cells[1].Value = rd["nama"].ToString();
+                    dataGridView1.Rows[newIndex].Cells[2].Value = rd["kategori"].ToString();
+                    dataGridView1.Rows[newIndex].Cells[3].Value = rd["harga"].ToString();
+                    dataGridView1.Rows[newIndex].Cells[4].Value = rd["ketersediaan"].ToString();
+                    dataGridView1.Rows[newIndex].Cells[5].Value = "Edit";
+                    dataGridView1.Rows[newIndex].Cells[6].Value = "Delete";
+                }
+                cmd.Dispose();
+                rd.Close();
+                Koneksi.tutup();
             }
-            cmd.Dispose();
-            rd.Close();
-            sqlConn.Close();
+            catch
+            {
+                MessageBox.Show("Terjadi kesalahan saat menampilkan data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -93,21 +98,26 @@ namespace APP_KASIR_RESTO
                     return;
                 }
 
-                string id_menu_dihapus = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                //buat koneksi ke database
-                string connString = @"data source=DESKTOP-1KQRPTA\SQLEXPRESS01; initial catalog=KASIR_RESTO; integrated security=true";
-                SqlConnection sqlConn = new SqlConnection(connString);
-                sqlConn.Open();
+                try
+                {
+                    string id_menu_dihapus = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    //buat koneksi ke database
+                    Koneksi.buka();
 
-                //buat command DELETE
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = sqlConn;
-                cmd.CommandText = " DELETE FROM menu WHERE id = @pID ";
-                cmd.Parameters.AddWithValue("pID", id_menu_dihapus);
-                cmd.ExecuteNonQuery(); //eksekusi command  
-                sqlConn.Close();
-                cmd.Dispose();
-                LoadDataMenu();  //reload/refresh data di gridView
+                    //buat command DELETE
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = Koneksi.sqlConn;
+                    cmd.CommandText = " DELETE FROM menu WHERE id = @pID ";
+                    cmd.Parameters.AddWithValue("pID", id_menu_dihapus);
+                    cmd.ExecuteNonQuery(); //eksekusi command  
+                    Koneksi.tutup();
+                    cmd.Dispose();
+                    LoadDataMenu();  //reload/refresh data di gridView
+                }
+                catch
+                {
+                    MessageBox.Show("Terjadi kesalahan saat menghapus data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
