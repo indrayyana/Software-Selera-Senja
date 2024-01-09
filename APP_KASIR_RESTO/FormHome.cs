@@ -26,6 +26,14 @@ namespace APP_KASIR_RESTO
                 frm.MdiParent = this;
                 frm.Show();
             }
+
+            if (e.Node.Text.Equals("Kalkulator Kasir"))
+            {
+                FormTransaksi frm = new FormTransaksi();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
     }
 }
