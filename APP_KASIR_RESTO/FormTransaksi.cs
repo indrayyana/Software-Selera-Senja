@@ -14,6 +14,7 @@ namespace APP_KASIR_RESTO
     public partial class FormTransaksi : Form
     {
         int subTotalHarga, pajak, totalHarga, kembali = 0;
+        int idTransaksi;
 
         public FormTransaksi()
         {
@@ -116,26 +117,23 @@ namespace APP_KASIR_RESTO
             }
         }
 
-        private void numTunai_KeyDown(object sender, KeyEventArgs e)
+        private void btnPay_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            // Validasi input
+            if (numTunai.Value <= 0)
             {
-                // Validasi input
-                if (string.IsNullOrWhiteSpace(numTunai.Text))
-                {
-                    MessageBox.Show("Input harus diisi.", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Mengembalikan format ribu ke nilai asli saat proses perhitungan
-                numTunai.ThousandsSeparator = false;
-
-                kembali = int.Parse(numTunai.Text) - totalHarga;
-                labelKembali.Text = "Rp " + kembali.ToString("N0");
-
-                // Kembalikan ke format ribu setelah proses perhitungan
-                numTunai.ThousandsSeparator = true;
+                MessageBox.Show("Masukkan jumlah tunai.", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            // Mengembalikan format ribu ke nilai asli saat proses perhitungan
+            numTunai.ThousandsSeparator = false;
+
+            kembali = int.Parse(numTunai.Text) - totalHarga;
+            labelKembali.Text = "Rp " + kembali.ToString("N0");
+
+            // Kembalikan ke format ribu setelah proses perhitungan
+            numTunai.ThousandsSeparator = true;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -151,19 +149,58 @@ namespace APP_KASIR_RESTO
         
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Koneksi.buka();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = Koneksi.sqlConn;
+            if (labelKembali.Text != "-")
+            {
+                Koneksi.buka();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Koneksi.sqlConn;
 
-            cmd.CommandText = " INSERT INTO transaksi (tanggal_pembayaran, biaya_total) "
-                                + " VALUES (@pTanggal, @pTotal) ";
-            cmd.Parameters.AddWithValue("pTanggal", dtpKalkulator.Value);
-            cmd.Parameters.AddWithValue("pTotal", totalHarga);
+                try
+                {
+                    // Masukkan data ke table TRANSAKSI
+                    cmd.CommandText = " INSERT INTO transaksi (tanggal_pembayaran, biaya_total) "
+                                    + " VALUES (@pTanggal, @pTotal) "
+                                    + " SELECT SCOPE_IDENTITY() "; //  untuk mengambil ID data yg baru saja dimasukkan
 
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Data Transaksi Berhasil Disimpan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Koneksi.tutup();
-            cmd.Dispose();
+                    cmd.Parameters.AddWithValue("pTanggal", dtpKalkulator.Value);
+                    cmd.Parameters.AddWithValue("pTotal", totalHarga);
+
+                    // Eksekusi perintah dan ambil ID transaksi yang baru saja dimasukkan
+                    idTransaksi = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    // Iterasi melalui setiap baris dataGridViewKalkulator
+                    foreach (DataGridViewRow row in dataGridViewKalkulator.Rows)
+                    {
+
+                        int idMenu = Convert.ToInt32(row.Cells[0].Value);
+                        int jumlahPesanan = Convert.ToInt32(row.Cells[3].Value);
+
+                        cmd.CommandText = " INSERT INTO TransaksiDetail (id_transaksi, id_menu, jumlah_pesanan) "
+                                    + " VALUES (@pIdTransaksi, @pIdMenu, @pJumlah) ";
+
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("pIdTransaksi", idTransaksi);
+                        cmd.Parameters.AddWithValue("pIdMenu", idMenu);
+                        cmd.Parameters.AddWithValue("pJumlah", jumlahPesanan);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+
+                    MessageBox.Show("Data Transaksi Berhasil Disimpan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Terjadi kesalahan saat menyimpan data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                Koneksi.tutup();
+                cmd.Dispose();
+            }
+            else {
+                MessageBox.Show("Silahkan lakukan pembayaran terlebih dahulu (klik tombol Pay).", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }

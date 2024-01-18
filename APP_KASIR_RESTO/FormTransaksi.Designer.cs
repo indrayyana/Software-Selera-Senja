@@ -48,6 +48,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPay = new System.Windows.Forms.Button();
             this.labelKembali = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelPajak = new System.Windows.Forms.Label();
@@ -195,6 +196,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnPay);
             this.groupBox2.Controls.Add(this.labelKembali);
             this.groupBox2.Controls.Add(this.labelTotal);
             this.groupBox2.Controls.Add(this.labelPajak);
@@ -216,6 +218,21 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kalkulator Kasir";
+            // 
+            // btnPay
+            // 
+            this.btnPay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPay.BackColor = System.Drawing.Color.Blue;
+            this.btnPay.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnPay.Location = new System.Drawing.Point(309, 413);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(80, 30);
+            this.btnPay.TabIndex = 26;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // labelKembali
             // 
@@ -275,7 +292,6 @@
             this.numTunai.Size = new System.Drawing.Size(150, 20);
             this.numTunai.TabIndex = 21;
             this.numTunai.ThousandsSeparator = true;
-            this.numTunai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numTunai_KeyDown);
             // 
             // dataGridViewKalkulator
             // 
@@ -498,5 +514,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button btnPay;
     }
 }
