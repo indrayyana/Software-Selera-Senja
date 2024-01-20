@@ -73,3 +73,4 @@ C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\bin\Debug\zh-CHT
 C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.csproj.CopyComplete
+C:\Users\Microsoft\source\repos\APP_KASIR_RESTO\APP_KASIR_RESTO\obj\Debug\APP_KASIR_RESTO.FormReportTransaksi.resources

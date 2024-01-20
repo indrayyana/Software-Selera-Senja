@@ -12,27 +12,40 @@ namespace APP_KASIR_RESTO
 {
     public partial class FormHome : Form
     {
+        private Form activeChildForm = null;
+
         public FormHome()
         {
             InitializeComponent();
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            // Untuk menutup form yg sudah tidak aktif (sehingga hanya ada 1 form aktif)
+            if (activeChildForm != null)
+                activeChildForm.Close();
+
+            activeChildForm = childForm;
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.MdiParent = this;
+            childForm.Show();
         }
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (e.Node.Text.Equals("Data Menu"))
             {
-                FormDataMenu frm = new FormDataMenu();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
+                OpenChildForm(new FormDataMenu());
             }
 
             if (e.Node.Text.Equals("Kalkulator Kasir"))
             {
-                FormTransaksi frm = new FormTransaksi();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
+                OpenChildForm(new FormTransaksi());
+            }
+
+            if (e.Node.Text.Equals("Laporan Bulanan"))
+            {
+                OpenChildForm(new FormReportTransaksi());
             }
         }
     }

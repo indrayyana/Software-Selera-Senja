@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,25 @@ namespace APP_KASIR_RESTO
         {
             InitializeComponent();
             LoadDaftarMenu();
+
+            // Atur event handler untuk mengubah format
+            numTunai.TextChanged += NumericUpDown_TextChanged;
+        }
+
+        private void NumericUpDown_TextChanged(object sender, EventArgs e)
+        {
+            // Menghapus event handler sementara
+            numTunai.TextChanged -= NumericUpDown_TextChanged;
+
+            // Mengubah format saat teks berubah
+            string formattedValue = numTunai.Value.ToString("N0");
+
+            // Menetapkan teks dan memastikan posisi kursor di akhir
+            numTunai.Text = formattedValue;
+            numTunai.Select(formattedValue.Length, 0);
+
+            // Menambahkan kembali event handler
+            numTunai.TextChanged += NumericUpDown_TextChanged;
         }
 
         public void LoadDaftarMenu()
@@ -76,7 +96,7 @@ namespace APP_KASIR_RESTO
                     frm.Text = "Tambah Pesanan";
                     frm.id_menu_edit = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                     frm.txtNama.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    frm.numHarga.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    frm.txtHarga.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
@@ -120,11 +140,14 @@ namespace APP_KASIR_RESTO
         private void btnPay_Click(object sender, EventArgs e)
         {
             // Validasi input
-            if (numTunai.Value <= 0)
+            if (numTunai.Value < totalHarga)
             {
-                MessageBox.Show("Masukkan jumlah tunai.", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Jumlah tunai kurang dari total harga !", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            // Sementara hapus event handler untuk menghindari loop tak terbatas
+            numTunai.TextChanged -= NumericUpDown_TextChanged;
 
             // Mengembalikan format ribu ke nilai asli saat proses perhitungan
             numTunai.ThousandsSeparator = false;
@@ -134,6 +157,9 @@ namespace APP_KASIR_RESTO
 
             // Kembalikan ke format ribu setelah proses perhitungan
             numTunai.ThousandsSeparator = true;
+
+            // Tambahkan kembali event handler
+            numTunai.TextChanged += NumericUpDown_TextChanged;
         }
 
         private void btnReset_Click(object sender, EventArgs e)

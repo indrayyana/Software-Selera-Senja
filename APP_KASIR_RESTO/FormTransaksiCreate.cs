@@ -26,7 +26,7 @@ namespace APP_KASIR_RESTO
             {
                 // Mengambil data dari FormTransaksiCreate
                 string nama = txtNama.Text;
-                string harga = numHarga.Text;
+                string harga = txtHarga.Text;
                 string jumlah = numJumlah.Text;
 
                 // Membuat objek FormTransaksi

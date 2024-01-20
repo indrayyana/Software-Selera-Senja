@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numHarga = new System.Windows.Forms.NumericUpDown();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTransaksiCreate));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -36,25 +36,9 @@
             this.txtNama = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numJumlah = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numHarga)).BeginInit();
+            this.txtHarga = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numJumlah)).BeginInit();
             this.SuspendLayout();
-            // 
-            // numHarga
-            // 
-            this.numHarga.Cursor = System.Windows.Forms.Cursors.No;
-            this.numHarga.Enabled = false;
-            this.numHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numHarga.Location = new System.Drawing.Point(93, 56);
-            this.numHarga.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.numHarga.Name = "numHarga";
-            this.numHarga.ReadOnly = true;
-            this.numHarga.Size = new System.Drawing.Size(271, 22);
-            this.numHarga.TabIndex = 21;
             // 
             // btnCancel
             // 
@@ -86,20 +70,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 88);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 16);
+            this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 17;
             this.label4.Text = "Jumlah";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(24, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 16);
+            this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 16;
             this.label3.Text = "Harga";
             // 
@@ -117,10 +101,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(24, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nama";
             // 
@@ -147,22 +131,34 @@
             0,
             0});
             // 
+            // txtHarga
+            // 
+            this.txtHarga.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtHarga.Enabled = false;
+            this.txtHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHarga.Location = new System.Drawing.Point(93, 56);
+            this.txtHarga.Name = "txtHarga";
+            this.txtHarga.ReadOnly = true;
+            this.txtHarga.Size = new System.Drawing.Size(271, 22);
+            this.txtHarga.TabIndex = 23;
+            // 
             // FormTransaksiCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(393, 186);
+            this.Controls.Add(this.txtHarga);
             this.Controls.Add(this.numJumlah);
-            this.Controls.Add(this.numHarga);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNama);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTransaksiCreate";
             this.Text = "FormTransaksiCreate";
-            ((System.ComponentModel.ISupportInitialize)(this.numHarga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numJumlah)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,8 +166,6 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.NumericUpDown numHarga;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
@@ -179,5 +173,6 @@
         public System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.NumericUpDown numJumlah;
+        public System.Windows.Forms.TextBox txtHarga;
     }
 }
