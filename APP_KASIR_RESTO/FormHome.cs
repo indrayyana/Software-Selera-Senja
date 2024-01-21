@@ -13,10 +13,19 @@ namespace APP_KASIR_RESTO
     public partial class FormHome : Form
     {
         private Form activeChildForm = null;
+        private string roleUser;
 
-        public FormHome()
+        public FormHome(string roleUser)
         {
             InitializeComponent();
+            this.roleUser = roleUser;
+
+            // Jika bukan Admin
+            if (!roleUser.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            {
+                // maka hapus/jangan tampilkan node "Pengelolaan Data"
+                treeView1.Nodes.RemoveByKey("Node0");
+            }
         }
 
         private void OpenChildForm(Form childForm)
@@ -36,6 +45,11 @@ namespace APP_KASIR_RESTO
             if (e.Node.Text.Equals("Data Menu"))
             {
                 OpenChildForm(new FormDataMenu());
+            }
+
+            if (e.Node.Text.Equals("Data User"))
+            {
+                OpenChildForm(new FormDataUser());
             }
 
             if (e.Node.Text.Equals("Kalkulator Kasir"))

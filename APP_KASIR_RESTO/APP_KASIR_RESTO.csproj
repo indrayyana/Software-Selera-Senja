@@ -99,11 +99,29 @@
     <Compile Include="FormDataMenuCreate.Designer.cs">
       <DependentUpon>FormDataMenuCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDataUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataUser.Designer.cs">
+      <DependentUpon>FormDataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataUserCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataUserCreate.Designer.cs">
+      <DependentUpon>FormDataUserCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReportTransaksi.cs">
       <SubType>Form</SubType>
@@ -133,8 +151,17 @@
     <EmbeddedResource Include="FormDataMenuCreate.resx">
       <DependentUpon>FormDataMenuCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDataUser.resx">
+      <DependentUpon>FormDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataUserCreate.resx">
+      <DependentUpon>FormDataUserCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportTransaksi.resx">
       <DependentUpon>FormReportTransaksi.cs</DependentUpon>
@@ -195,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
