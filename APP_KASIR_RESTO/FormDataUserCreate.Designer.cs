@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDataUserCreate));
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSaveUser = new System.Windows.Forms.Button();
@@ -43,13 +44,14 @@
             // comboBoxRole
             // 
             this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRole.FormattingEnabled = true;
             this.comboBoxRole.Items.AddRange(new object[] {
             "Admin",
             "Staff"});
-            this.comboBoxRole.Location = new System.Drawing.Point(136, 44);
+            this.comboBoxRole.Location = new System.Drawing.Point(136, 46);
             this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(271, 21);
+            this.comboBoxRole.Size = new System.Drawing.Size(271, 24);
             this.comboBoxRole.TabIndex = 20;
             // 
             // btnCancel
@@ -58,7 +60,7 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(315, 133);
+            this.btnCancel.Location = new System.Drawing.Point(315, 145);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 34);
             this.btnCancel.TabIndex = 19;
@@ -71,7 +73,7 @@
             this.btnSaveUser.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSaveUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSaveUser.Location = new System.Drawing.Point(217, 133);
+            this.btnSaveUser.Location = new System.Drawing.Point(217, 145);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.Size = new System.Drawing.Size(92, 34);
             this.btnSaveUser.TabIndex = 18;
@@ -83,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 99);
+            this.label4.Location = new System.Drawing.Point(12, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 16);
             this.label4.TabIndex = 17;
@@ -93,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 73);
+            this.label3.Location = new System.Drawing.Point(12, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 16;
@@ -101,16 +103,17 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(136, 96);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(136, 104);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(271, 20);
+            this.txtPassword.Size = new System.Drawing.Size(271, 22);
             this.txtPassword.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 47);
+            this.label2.Location = new System.Drawing.Point(12, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 14;
@@ -118,9 +121,10 @@
             // 
             // txtNamaUser
             // 
+            this.txtNamaUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamaUser.Location = new System.Drawing.Point(136, 18);
             this.txtNamaUser.Name = "txtNamaUser";
-            this.txtNamaUser.Size = new System.Drawing.Size(271, 20);
+            this.txtNamaUser.Size = new System.Drawing.Size(271, 22);
             this.txtNamaUser.TabIndex = 13;
             // 
             // label1
@@ -135,9 +139,10 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(136, 71);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(136, 76);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(271, 20);
+            this.txtUsername.Size = new System.Drawing.Size(271, 22);
             this.txtUsername.TabIndex = 22;
             // 
             // FormDataUserCreate
@@ -145,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(439, 186);
+            this.ClientSize = new System.Drawing.Size(439, 191);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.comboBoxRole);
             this.Controls.Add(this.btnCancel);
@@ -156,6 +161,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNamaUser);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDataUserCreate";
             this.Text = "FormDataUserCreate";
             this.ResumeLayout(false);

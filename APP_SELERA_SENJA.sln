@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP_SELERA_SENJA", "APP_KASIR_RESTO\APP_SELERA_SENJA.csproj", "{AE5B7D1D-8E92-4682-BEC0-FE1A85723F77}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSeleraSenja", "SetupKasirResto\SetupKasirResto.vdproj", "{F4135468-DAFC-40F5-B44D-9950C78AC610}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE5B7D1D-8E92-4682-BEC0-FE1A85723F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5B7D1D-8E92-4682-BEC0-FE1A85723F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5B7D1D-8E92-4682-BEC0-FE1A85723F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5B7D1D-8E92-4682-BEC0-FE1A85723F77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4135468-DAFC-40F5-B44D-9950C78AC610}.Debug|Any CPU.ActiveCfg = Debug
+		{F4135468-DAFC-40F5-B44D-9950C78AC610}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94394F8E-1DC3-4BC2-97E1-5655CB878790}
+	EndGlobalSection
+EndGlobal

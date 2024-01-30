@@ -31,15 +31,25 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportTransaksi));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTableTransaksiDetailBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new APP_KASIR_RESTO.DataSet1();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTableTransaksiDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTableTransaksiDetailTableAdapter = new APP_KASIR_RESTO.DataSet1TableAdapters.DataTableTransaksiDetailTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableTransaksiDetailBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableTransaksiDetailBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataTableTransaksiDetailBindingSource1
+            // 
+            this.dataTableTransaksiDetailBindingSource1.DataMember = "DataTableTransaksiDetail";
+            this.dataTableTransaksiDetailBindingSource1.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -53,16 +63,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dataTableTransaksiDetailBindingSource1
-            // 
-            this.dataTableTransaksiDetailBindingSource1.DataMember = "DataTableTransaksiDetail";
-            this.dataTableTransaksiDetailBindingSource1.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataTableTransaksiDetailBindingSource
             // 
@@ -81,7 +81,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormReportTransaksi";
-            this.Text = "FormReportTransaksi";
+            this.Text = "Laporan Bulanan";
             this.Load += new System.EventHandler(this.FormReportTransaksi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTableTransaksiDetailBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

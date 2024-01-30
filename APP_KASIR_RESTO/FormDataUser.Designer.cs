@@ -194,7 +194,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDataUser";
-            this.Text = "App Kasir Resto v1.0";
+            this.Text = "Data User";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

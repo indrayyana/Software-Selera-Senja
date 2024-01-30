@@ -54,23 +54,25 @@
             // 
             // txtNama
             // 
+            this.txtNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNama.Location = new System.Drawing.Point(140, 15);
             this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(271, 20);
+            this.txtNama.Size = new System.Drawing.Size(271, 22);
             this.txtNama.TabIndex = 1;
             // 
             // txtKategori
             // 
-            this.txtKategori.Location = new System.Drawing.Point(140, 41);
+            this.txtKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKategori.Location = new System.Drawing.Point(140, 43);
             this.txtKategori.Name = "txtKategori";
-            this.txtKategori.Size = new System.Drawing.Size(271, 20);
+            this.txtKategori.Size = new System.Drawing.Size(271, 22);
             this.txtKategori.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 44);
+            this.label2.Location = new System.Drawing.Point(16, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 2;
@@ -80,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 70);
+            this.label3.Location = new System.Drawing.Point(16, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 4;
@@ -90,7 +92,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 96);
+            this.label4.Location = new System.Drawing.Point(16, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 16);
             this.label4.TabIndex = 6;
@@ -102,7 +104,7 @@
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(221, 130);
+            this.btnSave.Location = new System.Drawing.Point(221, 145);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(92, 34);
             this.btnSave.TabIndex = 8;
@@ -116,7 +118,7 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(319, 130);
+            this.btnCancel.Location = new System.Drawing.Point(319, 145);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 34);
             this.btnCancel.TabIndex = 9;
@@ -126,25 +128,27 @@
             // comboBoxKetersediaan
             // 
             this.comboBoxKetersediaan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxKetersediaan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKetersediaan.FormattingEnabled = true;
             this.comboBoxKetersediaan.Items.AddRange(new object[] {
             "Tersedia",
             "Tidak Tersedia"});
-            this.comboBoxKetersediaan.Location = new System.Drawing.Point(140, 93);
+            this.comboBoxKetersediaan.Location = new System.Drawing.Point(140, 99);
             this.comboBoxKetersediaan.Name = "comboBoxKetersediaan";
-            this.comboBoxKetersediaan.Size = new System.Drawing.Size(271, 21);
+            this.comboBoxKetersediaan.Size = new System.Drawing.Size(271, 24);
             this.comboBoxKetersediaan.TabIndex = 10;
             // 
             // numHarga
             // 
-            this.numHarga.Location = new System.Drawing.Point(140, 67);
+            this.numHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numHarga.Location = new System.Drawing.Point(140, 71);
             this.numHarga.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.numHarga.Name = "numHarga";
-            this.numHarga.Size = new System.Drawing.Size(271, 20);
+            this.numHarga.Size = new System.Drawing.Size(271, 22);
             this.numHarga.TabIndex = 11;
             // 
             // FormDataMenuCreate
@@ -152,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(439, 186);
+            this.ClientSize = new System.Drawing.Size(439, 191);
             this.Controls.Add(this.numHarga);
             this.Controls.Add(this.comboBoxKetersediaan);
             this.Controls.Add(this.btnCancel);

@@ -85,7 +85,7 @@
             this.IsMdiContainer = true;
             this.Name = "FormHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormHome";
+            this.Text = "App Selera Senja v1.0";
             this.ResumeLayout(false);
 
         }
